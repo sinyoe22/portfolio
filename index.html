@@ -3,43 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinyoe22 | Developer Portfolio</title>
+    <title>0xSinyoe22 // Hacker Portfolio</title>
+    <meta name="description" content="Sinyoe22 — Code, Hack, Automate">
+    <meta name="theme-color" content="#000">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #0d1117; color: #c9d1d9; font-family: monospace; padding: 2rem; max-width: 800px; margin: 0 auto; line-height: 1.6; }
-        a { color: #58a6ff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
-        .card { border: 1px solid #30363d; padding: 1.5rem; margin-bottom: 1rem; border-radius: 6px; background: #161b22; }
-        .tag { background: #238636; color: #fff; padding: 0.2rem 0.5rem; border-radius: 12px; font-size: 0.8rem; }
+        :root { --bg: #0a0a0a; --fg: #00ff00; --dim: #003300; --accent: #00ffcc; }
+        body { margin: 0; padding: 0; background-color: var(--bg); color: var(--fg); font-family: 'JetBrains Mono', monospace; overflow-x: hidden; line-height: 1.6; }
+        
+        /* CRT Effect */
+        body::before {
+            content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none;
+        }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+        
+        header { border-bottom: 2px dashed var(--dim); padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { margin: 0; font-size: 2.5rem; text-shadow: 0 0 5px var(--fg); }
+        .subtitle { font-size: 1.1rem; color: var(--accent); margin-top: 10px; }
+        
+        .nav { margin: 20px 0; display: flex; gap: 20px; border: 1px solid var(--dim); padding: 10px; background: rgba(0, 50, 0, 0.2); }
+        .nav a { color: var(--fg); text-decoration: none; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .nav a:hover { color: #fff; text-shadow: 0 0 8px #fff; }
+        .nav a::before { content: "[ "; color: var(--dim); }
+        .nav a::after { content: " ]"; color: var(--dim); }
+
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 1.5rem; border-bottom: 1px solid var(--dim); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; text-transform: uppercase; }
+        .section-title::before { content: ">_ "; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { border: 1px solid var(--dim); padding: 20px; background: rgba(0, 20, 0, 0.3); transition: all 0.2s ease; cursor: default; }
+        .card:hover { border-color: var(--fg); box-shadow: inset 0 0 10px var(--dim); transform: translateY(-2px); }
+        .card h3 { margin: 0 0 10px 0; color: var(--accent); }
+        .card p { margin: 0 0 15px 0; font-size: 0.9rem; }
+        .card a { color: var(--fg); text-decoration: none; border-bottom: 1px dashed var(--fg); }
+        .card a:hover { background: var(--fg); color: var(--bg); }
+        
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+        
+        .ascii-art { font-size: 12px; white-space: pre; color: var(--dim); line-height: 1.2; text-align: center; margin-bottom: 30px; }
+        
+        .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag { border: 1px solid var(--fg); padding: 2px 8px; font-size: 0.8rem; background: rgba(0, 255, 0, 0.1); }
     </style>
 </head>
 <body>
-    <h1>> Sinyoe22</h1>
-    <p>Crypto Bot Developer, Automation Expert & Bug Bounty Hunter.</p>
-    
-    <div class="card">
-        <h2>Open Source Projects</h2>
-        <ul>
-            <li>
-                <a href="https://github.com/sinyoe22/rpow2-mining-bot">RPOW2 Mining Bot</a> 
-                <span class="tag">Go/Rust</span>
-            </li>
-            <br>
-            <li>
-                <a href="https://github.com/sinyoe22/discord-moni-bridge">Discord-TG Moni Bridge</a> 
-                <span class="tag">Python</span>
-            </li>
-            <br>
-            <li>
-                <a href="https://github.com/sinyoe22/govnet-skill">GovNet Bot Automation</a> 
-                <span class="tag">Node/JS</span>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="card">
-        <h2>Skills</h2>
-        <p>- Python, Rust, Go, Node.js<br>- Crypto Node/Validator Deployment<br>- Bug Bounty (Recon, Smart Contract logic)<br>- AI/LLM Automated Trading Strategies</p>
+    <div class="container">
+        <div class="ascii-art">
+   _____  _                           ___  ___  
+  / ____|(_)                         |__ \|__ \ 
+ | (___   _  _ __   _   _   ___    ___  ) |  ) |
+  \___ \ | || '_ \ | | | | / _ \  / _ \/ /  / / 
+  ____) || || | | || |_| || (_) ||  __/_|  |_|  
+ |_____/ |_||_| |_| \__, | \___/  \___|(_) (_)  
+                     __/ |                      
+                    |___/                       
+        </div>
+        
+        <header>
+            <h1>Sinyoe22 <span class="blink">_</span></h1>
+            <div class="subtitle">> Crypto Bot Developer & Web3 Security Researcher</div>
+            <p>sys.status = "ONLINE" | loc = "ID" | rank = "ELITE"</p>
+        </header>
+        
+        <div class="nav">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="https://github.com/sinyoe22" target="_blank">GitHub</a>
+        </div>
+        
+        <div id="projects" class="section">
+            <h2 class="section-title">Open_Source_Repos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>RPOW2 Mining Bot</h3>
+                    <p>Automated mining infrastructure for Hal Finney's RPOW tribute. Auto-send, rotation, Telegram alerts.</p>
+                    <a href="https://github.com/sinyoe22/rpow2-mining-bot" target="_blank">initiate connection //</a>
+                </div>
+                <div class="card">
+                    <h3>Discord-TG Moni Bridge</h3>
+                    <p>Telethon userbot integration to bypass @moni_checker_bot restrictions. Bridges Discord commands to Telegram.</p>
+                    <a href="https://github.com/sinyoe22/discord-moni-bridge" target="_blank">initiate connection //</a>
+                </div>
+                <div class="card">
+                    <h3>GovNet Skill</h3>
+                    <p>Node.js & Python automation for GovNet Prediction Markets and staking mechanisms.</p>
+                    <a href="https://github.com/sinyoe22/govnet-skill" target="_blank">initiate connection //</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="skills" class="section">
+            <h2 class="section-title">System_Capabilities</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Python (Async/Bot)</span>
+                <span class="skill-tag">Rust (High-Freq)</span>
+                <span class="skill-tag">Go (Harness)</span>
+                <span class="skill-tag">EVM / Solidity</span>
+                <span class="skill-tag">Web3 Automation</span>
+                <span class="skill-tag">Telethon / MTProto</span>
+                <span class="skill-tag">Smart Contract Auditing</span>
+            </div>
+        </div>
+        
+        <footer style="margin-top: 50px; text-align: center; border-top: 1px solid var(--dim); padding-top: 20px; font-size: 0.8rem; color: var(--dim);">
+            CONNECTION TERMINATED. // 2026
+        </footer>
     </div>
 </body>
 </html>
